@@ -1,0 +1,11 @@
+Training Images - Unfiltered (except the lewd stuff), raw images of Lain scraped from various websites
+This used to be the training data for the old model, which was horrible.
+https://mega.nz/folder/BUdUUQCC#gTgP10vbE884BzHdoENWXw/folder/wdMCDSLJ
+
+Cropped Training Images - Filtered and cropped images of "lain" and "not lain"
+"lain" are the training images from above, and "not lain" are random anime character faces.
+All of those images are put through the LBP Cascade classifier, and then used as training data for the current model.
+https://mega.nz/folder/lddSCCzQ#X22vPj8YJAwAyMgRhg5zsg
+
+Test Images - Testing set.
+https://mega.nz/folder/0cdA3I4D#q7evL4yDlko5aaQQOMI6wA

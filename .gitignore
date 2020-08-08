@@ -1,0 +1,11 @@
+.idea
+.vscode
+.empty
+bottleneck_data/
+full_lain_dataset/
+model/
+retrain_logs/
+test_images/
+training_cropped_images/
+training_images/
+*__pycache__*

@@ -67,6 +67,6 @@ Requirements
 
 References
 -----------
-https://github.com/freedomofkeima/transfer-learning-anime
-https://github.com/nagadomi/animeface-2009
-http://freedomofkeima.com/blog/posts/flag-15-image-recognition-for-anime-characters
+- https://github.com/freedomofkeima/transfer-learning-anime
+- https://github.com/nagadomi/animeface-2009
+- http://freedomofkeima.com/blog/posts/flag-15-image-recognition-for-anime-characters

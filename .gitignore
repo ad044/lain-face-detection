@@ -8,4 +8,5 @@ retrain_logs/
 test_images/
 training_cropped_images/
 training_images/
+testvid.mp4
 *__pycache__*

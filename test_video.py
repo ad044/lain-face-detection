@@ -20,13 +20,17 @@ def import_graph(path):
         _ = tf.import_graph_def(graph_def, name='')
 
 
-def main(files):
+def main():
+    cap = cv2.VideoCapture("./testvid.mp4")
+    frame_width = int(cap.get(3))  
+    frame_height = int(cap.get(4))
+    out = cv2.VideoWriter("./out.avi", cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'),
+                      10, (frame_width, frame_height))
     import_graph(os.getcwd() + '/retrained_graph.pb')
     with tf.Session() as sess:
-        for file in files:
+        while(cap.isOpened()):
+            ret, image = cap.read()
             cascade = cv2.CascadeClassifier("./lbpcascade_animeface.xml")
-            image = cv2.imread(os.path.join(file), cv2.IMREAD_COLOR)
-            print(file)
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
             gray = cv2.equalizeHist(gray)
 
@@ -34,6 +38,7 @@ def main(files):
                                              scaleFactor=1.1,
                                              minNeighbors=5,
                                              minSize=(24, 24))
+            print(faces) 
             for (x, y, w, h) in faces:
                 crop_img = image[y:y+h, x:x+w]
                 img_to_array = np.array(crop_img)[:, :, 0:3]
@@ -46,7 +51,6 @@ def main(files):
 
                 # if first element is 1 then the model has recognized lain in the image.
                 # if so, draw a rectangle around her face, show image and continue
-                print('\n{}'.format(os.path.join(file)))
                 if sorted_predictions.flat[0] == 1:
                     cv2.rectangle(
                         image, (x, y), (x + w, y + h), (0, 0, 255), 2)
@@ -59,13 +63,13 @@ def main(files):
                     score_as_percent = confidence * 100.0
                     result = '{}, {:.2f}%'.format(
                         label_to_str, score_as_percent)
-                    cv2.imshow(file, image)
-                    print(result)
 
-            cv2.waitKey()
+            if ret == True:
+                out.write(image)
+                #cv2.imshow('frame', image)
+
+
             cv2.destroyAllWindows()
 
-
-
 if __name__ == '__main__':
-    main(sys.argv[1:])
+    main()

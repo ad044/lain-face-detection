@@ -1,6 +1,4 @@
 import cv2
-import sys
-import os.path
 
 
 # anime face recognition model

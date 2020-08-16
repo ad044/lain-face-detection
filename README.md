@@ -52,13 +52,16 @@ As a general warning, most of the code in this project are helpers I used to gat
 - **data_cleaning** - scripts used to remove duplicates and in general format the freshly downloaded, messy data.
 - **get_training_data** - scripts used to automate mass downloading Lain images.
 - **lbpcascade_animeface.xml** - parameters for LBP Cascade provided by [nagadomi](https://github.com/nagadomi/lbpcascade_animeface).
-- **test.py** - testing batches of images from a certain folder
+- **test.py** - ~~testing batches of images from a certain folder~~ Takes a path/path of images as input, shows the output.
+- **test_video.py** - Video testing script.
 - **train.py** - training code for the Inception V3 model using transfer learning.
 
 Todo
 -----------
-- Add **eval.py** - a simple and hackable version of test.py that people can use easily.
-- Test the model's performance on moving frames such as videos.
+- ~~Add **eval.py** - a simple and hackable version of test.py that people can use easily.~~ changed **test.py**.
+- ~~Test the model's performance on moving frames such as videos.~~ added **test_video.py**.
+
+For now this project is done, otherwise I'm going to fry my PC. Feel free to improve the model and use it however you like. I might come back to it at some point in the future, we'll see.
 
 Requirements
 -----------
